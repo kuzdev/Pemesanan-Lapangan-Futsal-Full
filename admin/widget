@@ -1,0 +1,36 @@
+<li class="bg_lo"> <a href="#"> <i class="icon-th-list"></i> <span class="label label-important">
+        <?php
+		$totInvoice=mysql_query("SELECT * FROM tboking");
+		$tot=mysql_num_rows($totInvoice);
+		echo"$tot";
+        ?>
+		</span>Total Invoice</a> </li>
+        <li class="bg_ls"> <a href="#"> <i class="icon-tint"></i><span class="label label-important">
+        <?php
+		$totInvoiceLunas=mysql_query("SELECT * FROM tboking WHERE statusBayar='L'");
+		$totL=mysql_num_rows($totInvoiceLunas);
+		echo"$totL";
+        ?>
+        </span> Total Invoice Lunas</a> </li>
+        <li class="bg_lb"> <a href="#"> <i class="icon-pencil"></i><span class="label label-important">
+        <?php
+		$totInvoiceB=mysql_query("SELECT * FROM tboking WHERE statusBayar='B'");
+		$totB=mysql_num_rows($totInvoiceB);
+		echo"$totB";
+        ?>
+        </span>Total Invoice Belum Lunas</a> </li>
+        <li class="bg_lg"> <a href="#"> <i class="icon-calendar"></i><span class="label label-important">
+        <?php
+		$totMember=mysql_query("SELECT * FROM tmember");
+		$totM=mysql_num_rows($totMember);
+		echo"$totM";
+        ?>
+        </span> Total member</a> </li>
+        <li class="bg_lr"> <a href="#"> <i class="icon-info-sign"></i> <span class="label label-important">
+        <?php
+		$tgl=date("Ymd");
+		$totJadwal=mysql_query("SELECT * FROM tjadwal WHERE tglJadwal='$tgl' ");
+		$totJ=mysql_num_rows($totJadwal);
+		echo"$totJ";
+        ?>
+        </span>Total Jadwal Hari Ini</a> </li>
